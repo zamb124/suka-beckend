@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "fastapi-boilerplate"
+name = "suka-backend"
 version = "0.1.0"
-description = "FastAPI Boilerplate"
+description = "Syk backend"
 authors = ["Hide <zambas123@gmail.com>"]
 
 [tool.poetry.dependencies]
