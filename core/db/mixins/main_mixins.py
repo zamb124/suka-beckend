@@ -1,9 +1,10 @@
-from sqlalchemy import Column,Identity, DateTime, func, BigInteger, Sequence, MetaData
+from sqlalchemy import Column, DateTime, func, BigInteger, Sequence, MetaData
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import declared_attr
 from sqlalchemy.orm import declarative_mixin
 from core.db import Base
 import uuid
+
 
 class DefaultMixin():
 
@@ -17,6 +18,7 @@ class DefaultMixin():
     def lsn(cls):
         return Column(
             BigInteger,
+            Sequence(f'lsn_{cls.__tablename__}_seq'),
             onupdate=cls.lsn_sec.next_value(),
             nullable=False
         )
